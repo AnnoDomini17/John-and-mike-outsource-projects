@@ -23,9 +23,11 @@ body {
 .sidenav ul li {
     padding: 8px 16px;
     text-align: left;
-    position: relative; /* For positioning the arrow */
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
 }
-
 .sidenav ul li a {
     color: #000000; /* Black text */
     text-decoration: none; /* Remove underline */
@@ -49,7 +51,7 @@ body {
 
 .sidenav ul li ul.child {
     display: none;
-    padding-left: 20px;
+    padding-left: 12px;
 }
 
 .sidenav ul li ul.child li {
@@ -65,17 +67,24 @@ body {
     font-weight: bold; /* Bold on hover */
 }
 
-.arrow {
-    position: absolute; /* Position arrow relative to parent item */
-    right: 16px; /* Adjust as needed */
+.icon-angle-down {
+    position: absolute;
+    right: 16px;
     transform: translateY(0%);
     transition: transform 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.arrow.open {
+.icon-angle-down.open {
     transform: rotate(180deg); /* Rotate the arrow upwards */
 }
 
+.icon-angle-down svg{
+    height: 15px;
+    width:15px;
+}
 .non-clickable {
     color: #666; /* Gray text for non-clickable items */
 }
